@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purwa Pokale | Cloud Engineer Portfolio</title>
+    <title>Purwa Pokale | Cloud Engineer</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            /* Modern Dark Theme Colors */
-            --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            --accent: #00f260; /* Neon Green */
-            --accent-secondary: #0575E6; /* Neon Blue */
+            /* Pink & Purple Theme Colors */
+            --bg-gradient: linear-gradient(135deg, #1a0b2e, #2d1b4e, #10051d);
+            --accent: #ff00cc; /* Hot Pink */
+            --accent-secondary: #9900ff; /* Electric Purple */
+            
             --text-light: #ffffff;
-            --text-dim: #b3b3b3;
+            --text-dim: #e0d4e6;
+            
+            /* Glassmorphism Variables */
             --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 100, 255, 0.2); /* Pinkish border */
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -30,43 +29,33 @@
             color: var(--text-light);
             min-height: 100vh;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        /* Main Container with Glass Effect Background Shape */
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 40px 20px;
-            position: relative;
         }
 
-        /* Hero Section */
+        /* Header */
         header {
             text-align: center;
             padding: 60px 20px;
-            animation: fadeInUp 1.5s ease;
+            animation: fadeIn 1.5s ease;
         }
 
-        /* Placeholder for Profile Image - Future Use */
-        .profile-img-placeholder {
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(to right, var(--accent), var(--accent-secondary));
-            border-radius: 50%;
-            margin: 0 auto 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: var(--bg-gradient);
-            box-shadow: 0 0 30px rgba(0, 242, 96, 0.3);
+        .profile-icon {
+            font-size: 4rem;
+            background: -webkit-linear-gradient(var(--accent), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
         }
 
         h1 {
             font-size: 3.5rem;
             font-weight: 700;
-            background: linear-gradient(to right, var(--accent), var(--accent-secondary));
+            background: linear-gradient(to right, var(--accent), #fff, var(--accent-secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
@@ -75,17 +64,14 @@
         .role {
             font-size: 1.5rem;
             color: var(--text-dim);
-            font-weight: 300;
-            letter-spacing: 2px;
             margin-bottom: 30px;
         }
 
-        /* Modern Buttons */
+        /* Buttons */
         .btn-group {
             display: flex;
             justify-content: center;
             gap: 20px;
-            flex-wrap: wrap;
         }
 
         .btn {
@@ -100,42 +86,30 @@
         }
 
         .btn-primary {
-            background: linear-gradient(to right, var(--accent), var(--accent-secondary));
-            color: #0f0c29;
-            box-shadow: 0 0 20px rgba(0, 242, 96, 0.4);
+            background: linear-gradient(45deg, var(--accent), var(--accent-secondary));
+            color: white;
+            box-shadow: 0 0 20px rgba(255, 0, 204, 0.4);
         }
 
         .btn-outline {
             background: transparent;
-            border: 2px solid var(--accent-secondary);
-            color: var(--accent-secondary);
+            border: 2px solid var(--accent);
+            color: white;
         }
 
         .btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(153, 0, 255, 0.4);
         }
 
-        /* Sections */
+        /* Cards */
         .section-title {
             font-size: 2rem;
             margin: 60px 0 30px;
-            position: relative;
+            border-bottom: 3px solid var(--accent-secondary);
             display: inline-block;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 2px;
-        }
-
-        /* Glassmorphism Cards Grid */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -144,20 +118,17 @@
 
         .glass-card {
             background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(10px);
             border: 1px solid var(--glass-border);
             padding: 30px;
             border-radius: 20px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            transition: transform 0.4s;
         }
 
         .glass-card:hover {
             transform: translateY(-10px);
             border-color: var(--accent);
-            box-shadow: 0 0 30px rgba(0, 242, 96, 0.2);
+            box-shadow: 0 0 30px rgba(255, 0, 204, 0.2);
         }
 
         .card-icon {
@@ -166,28 +137,16 @@
             margin-bottom: 20px;
         }
 
-        .glass-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        .glass-card p {
-            color: var(--text-dim);
-            font-size: 0.95rem;
-        }
-
         /* Footer */
         footer {
             text-align: center;
-            margin-top: 100px;
-            padding: 30px;
-            border-top: 1px solid var(--glass-border);
+            margin-top: 80px;
             color: var(--text-dim);
+            font-size: 0.9rem;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
@@ -196,55 +155,51 @@
 
     <div class="container">
         <header>
-            <div class="profile-img-placeholder">
-                <i class="fas fa-user-astronaut"></i>
-            </div>
-            
+            <div class="profile-icon"><i class="fas fa-user-astronaut"></i></div>
             <h1>Purwa Pokale</h1>
-            <div class="role">Cloud & DevOps Aspirant</div>
+            <div class="role">Cloud & DevOps Engineer</div>
             
             <div class="btn-group">
                 <a href="https://www.linkedin.com/in/purwa-pokale/" target="_blank" class="btn btn-primary">
                     <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
+                
                 <a href="https://github.com/purwapokale" target="_blank" class="btn btn-outline">
-                    <i class="fab fa-github"></i> GitHub Projects
+                    <i class="fab fa-github"></i> GitHub
                 </a>
             </div>
         </header>
 
-        <h2 class="section-title">Technical Arsenal</h2>
+        <h2 class="section-title">Technical Skills</h2>
         <div class="grid">
             <div class="glass-card">
                 <div class="card-icon"><i class="fab fa-aws"></i></div>
                 <h3>AWS Cloud</h3>
-                <p>S3 Storage, IAM Security, EC2 Compute, Static Website Hosting.</p>
+                <p>S3, IAM, EC2, Static Hosting</p>
             </div>
             <div class="glass-card">
-                <div class="card-icon"><i class="fas fa-rocket"></i></div>
-                <h3>CI/CD & DevOps</h3>
-                <p>GitHub Actions Pipelines, Automated Deployment, Git Version Control.</p>
+                <div class="card-icon"><i class="fas fa-code-branch"></i></div>
+                <h3>CI/CD Pipelines</h3>
+                <p>GitHub Actions, Automation</p>
             </div>
             <div class="glass-card">
-                <div class="card-icon"><i class="fas fa-terminal"></i></div>
-                <h3>Infrastructure</h3>
-                <p>Linux Basics, Networking Fundamentals, YAML configuration.</p>
+                <div class="card-icon"><i class="fab fa-linux"></i></div>
+                <h3>DevOps Tools</h3>
+                <p>Git, Linux, Bash Scripting</p>
             </div>
         </div>
 
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title">Projects</h2>
         <div class="grid">
-            <div class="glass-card" style="border-color: var(--accent);">
-                <div class="card-icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                <h3>Automated Cloud Resume (Live)</h3>
-                <p>Built a serverless portfolio hosted on AWS S3. Implemented a complete CI/CD pipeline using GitHub Actions for zero-touch deployments.</p>
-                <p style="margin-top:15px; font-size:0.8rem; color:var(--accent);">Tech: AWS S3, GitHub Actions, HTML/CSS</p>
+            <div class="glass-card">
+                <div class="card-icon"><i class="fas fa-cloud"></i></div>
+                <h3>Cloud Resume Challenge</h3>
+                <p>Deployed this portfolio on AWS S3 with automated CI/CD pipeline using GitHub Actions.</p>
             </div>
-            </div>
+        </div>
 
         <footer>
-            <p>Built with <i class="fas fa-heart" style="color:var(--accent)"></i> & Cloud Technology.</p>
-            <p style="font-size: 0.8rem; margin-top: 10px;">&copy; 2026 Purwa Pokale. Deployed via CI/CD pipeline.</p>
+            <p>&copy; 2026 Purwa Pokale | Hosted on AWS Cloud ☁️</p>
         </footer>
     </div>
 
