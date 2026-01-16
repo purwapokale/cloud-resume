@@ -1,18 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Cloud Resume</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purwa Pokale | Cloud Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: sans-serif; text-align: center; padding: 50px; }
-        h1 { color: #2c3e50; }
-        .card { border: 1px solid #ddd; padding: 20px; border-radius: 10px; display: inline-block; }
+        :root {
+            --primary: #00ff88; /* Matrix Green Color */
+            --bg: #0f172a;      /* Dark Blue Background */
+            --card: #1e293b;    /* Card Color */
+            --text: #e2e8f0;    /* Light Text */
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section (Introduction) */
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .role {
+            font-size: 1.5rem;
+            color: #94a3b8;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background: var(--primary);
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        /* Cards for Projects/Skills */
+        .section-title {
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 20px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Hello, I am Purwa Pokale</h1>
-        <p>Welcome to my Cloud Resume!</p>
-        <p>🚀 Deployed via CI/CD Pipeline</p>
+
+    <div class="container">
+        <header>
+            <h1>Purwa Pokale</h1>
+            <div class="role">Cloud & DevOps Aspirant</div>
+            <p>Transforming code into scalable cloud solutions.</p>
+            <a href="#" class="btn"><i class="fab fa-linkedin"></i> Connect on LinkedIn</a>
+            <a href="https://github.com/purwapokale" class="btn" style="background:transparent; border:1px solid var(--primary); color:var(--primary)"><i class="fab fa-github"></i> GitHub</a>
+        </header>
+
+        <h2 class="section-title">Technical Arsenal</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="icon"><i class="fab fa-aws"></i></div>
+                <h3>Cloud Computing</h3>
+                <p>AWS (S3, EC2, IAM), Cloud Hosting, Storage Management.</p>
+            </div>
+            <div class="card">
+                <div class="icon"><i class="fas fa-infinity"></i></div>
+                <h3>DevOps</h3>
+                <p>CI/CD Pipelines, GitHub Actions, Git Version Control.</p>
+            </div>
+            <div class="card">
+                <div class="icon"><i class="fab fa-linux"></i></div>
+                <h3>System Admin</h3>
+                <p>Linux Command Line, Shell Scripting, Server Management.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🚀 Cloud Resume Challenge</h3>
+                <p>Deployed a static resume on AWS S3 with a fully automated CI/CD pipeline using GitHub Actions.</p>
+            </div>
+            <div class="card">
+                <h3>🐍 Python Automation</h3>
+                <p>Created scripts to automate daily tasks and file management (Coming Soon).</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>Visitor Count: <span id="counter">Loading...</span> (Coming in Phase 2)</p>
+            <p>&copy; 2026 Purwa Pokale. Hosted on AWS S3.</p>
+        </footer>
     </div>
+
 </body>
-</html>gi
+</html>
