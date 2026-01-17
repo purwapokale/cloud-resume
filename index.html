@@ -434,5 +434,25 @@
             });
         });
     </script>
+    <script>
+        // API Endpoint (Yahan aapka URL hai)
+        const apiUrl = "https://xkq3airqwi.execute-api.ap-south-1.amazonaws.com/update-visitor-count";
+        
+        const counterElement = document.getElementById("counter");
+
+        async function updateCounter() {
+            try {
+                let response = await fetch(apiUrl);
+                let data = await response.json();
+                counterElement.innerHTML = data;
+                console.log("Visitor Count Updated:", data);
+            } catch (error) {
+                console.error("Error fetching count:", error);
+                counterElement.innerHTML = "Error";
+            }
+        }
+
+        updateCounter();
+    </script>
 </body>
 </html>
